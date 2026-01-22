@@ -70,6 +70,8 @@ source build_ip.tcl
 source base.tcl
 ```
 
+> **Debug:** It has been noticed that several groups have run into issues with `source base.tcl` failing. This is because `build_ip.tcl` is not generating the HLS IPs and saving it to the correct directory properly. This is due to an overflow bug by Vivado. Refer to this general [solution](../debug.md#vivado-y2k22) to the bug.
+
 > **Note:** If you need help launching the `.tcl` script from the terminal or Vivado GUI, refer to these [instructions](https://xilinx.github.io/Alveo-Cards/cards/ul3524/build/html/docs/Docs/loading_ref_proj.html).
 
 ![](/images/lab2-source-tcl.jpg)
