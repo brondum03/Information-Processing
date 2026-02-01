@@ -39,7 +39,6 @@ deepdiff==5.8.1
 defusedxml==0.7.1
 deltasigma==0.2.2
 distro==1.7.0
-distro-info===1.1build1
 dnspython==2.1.0
 docutils==0.17.1
 dropbox==11.26.0
