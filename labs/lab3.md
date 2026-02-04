@@ -271,3 +271,5 @@ to you than OpenSCAD, some formats (e.g. SVG) can be imported directly into
 OpenSCAD, others can be converted to or from OpenSCAD. You can also design the
 case entirely in another program if you wish, the only requirement is that the
 final 3D model for printing is in STL format.
+
+You can find a guide on how to do the 3D printing at EEE in `case/3D printing.pdf`, but whether the case is printed out or optimized is only an optional component for the mid-term oral (but encouraged for the final group project).
