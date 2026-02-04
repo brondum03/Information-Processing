@@ -15,7 +15,14 @@ been done for you already.
 Load [wifi.py](/wifi.py) onto the PYNQ board and run it, e.g. by clicking
 "Import" from the Jupyter Notebook web interface to load it, and then opening a
 new notebook to type `%run wifi.py`. Follow the instructions and be sure to
-read the security warning.
+read the security warning. This will set a persistent configuration, so you
+don't need to run it every time you boot up the board.
+
+If you are in a location where eduroam signal strength is particularly bad
+(e.g. the 114W1 teaching lab...) you can also try connecting to a different
+network, e.g. a mobile hotspot, by following the [instructions
+here](https://github.com/Xilinx/PYNQ/blob/master/pynq/notebooks/common/wifi.ipynb),
+which should work for any WPA2-PSK network.
 
 ## 3.2 Installing the dependencies
 
@@ -78,7 +85,8 @@ print(f"You said: {response}")
 To get a response from the LLM, we can use the OpenAI API. You will need to
 get an API key from [platform.openai.com](https://platform.openai.com/) first
 ([go to this page](https://platform.openai.com/settings/organization/api-keys)
-after signing in, then click "Create new secret key")
+after signing in, then click "Create new secret key"). Alternatively, use a
+different API/model if you prefer.
 
 ```python
 from openai import OpenAI

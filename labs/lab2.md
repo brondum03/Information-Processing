@@ -70,6 +70,8 @@ source build_ip.tcl
 source base.tcl
 ```
 
+> **Debug:** It has been noticed that several groups have run into issues with `source base.tcl` failing. This is because `build_ip.tcl` is not generating the HLS IPs and saving it to the correct directory properly. This is due to an overflow bug by Vivado. Refer to this general [solution](../debug.md#vivado-y2k22) to the bug.
+
 > **Note:** If you need help launching the `.tcl` script from the terminal or Vivado GUI, refer to these [instructions](https://xilinx.github.io/Alveo-Cards/cards/ul3524/build/html/docs/Docs/loading_ref_proj.html).
 
 ![](/images/lab2-source-tcl.jpg)
@@ -200,7 +202,9 @@ Now that we have a frontend module that converts incoming PDM data to PCM data, 
 
 The BaseOverlay's `audio_direct` module uses an AXI4 peripheral controlled by MMIO registers.
 
-Since we're converting the PDM input from the microphone to PCM, we must modify the RX (receive) FIFO to accept 32-bit inputs instead of 1-bit inputs. PCM uses 32 bits while PDM uses 1 bit in the current design. At this stage, we won't modify the TX (transmit) FIFO.
+Since we're converting the PDM input from the microphone to PCM, we must modify the RX (receive) FIFO to accept 32-bit inputs instead of 1-bit inputs. PCM uses 32-bits while PDM uses 1-bit in the current design. At this stage, we won't modify the Tx (transmit) side.
+
+> The Tx-side "serializer" expects 16-bit inputs from the Tx FIFO and outputs 1-bit outputs for PWM playback. Hence, you should generate one 32-bit wide FIFO and one 16-bit wide FIFO. The image below is an older screenshot which incorrectly shows both the Tx-side FIFO and the Rx-side FIFO using the same generated IP.
 
 ![](/images/lab2-audio-direct-modified.jpg)
 

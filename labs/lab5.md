@@ -1,5 +1,9 @@
 # Lab 5: Relational Databases and SQL
 
-In this lab we will use a basic relational database, populate it with data and run several queries involving various selection, projection and join operations.
+This lab introduces the use of a relational database on EC2, communication with a database server on AWS using a client–server architecture, and the implementation of database API endpoints (using Python and Flask).
 
-Detailed manual will be added here.
+[Lab 5 Manual](lab5docs/lab5_manual.pdf)
+
+The Python scripts for this lab are available here:
+
+[Lab 5 Scripts](lab5docs)
