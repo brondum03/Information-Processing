@@ -7,7 +7,7 @@ sys.modules["onnxruntime"] = ModuleType("onnxruntime")
 from pynq import Overlay
 from scipy import signal
 from scipy.io import wavfile
-from numba import jit
+# from numba import jit
 import numpy as np
 import ctypes
 import openwakeword
@@ -98,7 +98,7 @@ def get_llm_response(text):
     return resp.choices[0].message.content.strip()
 
 
-@jit(nopython=True)
+# @jit(nopython=True)
 def delta_sigma_numba(upsampled):
     """Fast delta-sigma modulation with Numba."""
     pdm = np.zeros(len(upsampled), dtype=np.uint8)
