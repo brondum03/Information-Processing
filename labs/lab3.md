@@ -32,6 +32,16 @@ again, this module is not about dealing with so-called "dependency hell". Use
 [jupyter_notebook/lab3/dependencies.ipynb](/jupyter_notebook/lab3/dependencies.ipynb)
 to install the dependencies.
 
+UPDATE: apparently the first version of this lab unintentionally did become
+about dealing with dependency hell. As an alternative to installing the
+dependencies yourself, you can instead download a known-working image with all
+the dependencies pre-installed [at this
+link](https://www.cl.cam.ac.uk/~ecc73/pub/teaching/pynq/pynq_working.img) and
+flash it to the board's SD card. You will still need to connect to the WiFi
+yourself by following the instructions above. Be careful to copy any files you
+edited or notebooks you've written off of the board before flashing it, as
+these would of course be overwritten.
+
 ## 3.3 Converting recorded audio to text
 
 In order for the LLM to respond to the recorded audio, it first needs to be
@@ -140,6 +150,11 @@ def say(text):
 We're almost finished with the software side of the chatbot, but we want the
 chatbot to be interactive, meaning that it understands when you are speaking to
 it. We will use `openwakeword` to do wakeword detection.
+
+To debug whether openwakeword is installed and functioning correctly, you can
+run [test_oww.py](/talkbot/debugging/test_oww.py) on the PYNQ board -- it
+should detect a wakeword in [jarvis.wav](/talkbot/debugging/jarvis.wav) (which
+you should also upload) and output the detection value 0.97.
 
 `openwakeword` requires 16kHz 16-bit PCM data, so we normalize the audio the
 same as before:
