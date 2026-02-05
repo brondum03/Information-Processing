@@ -244,9 +244,9 @@ solved by improving or adding features in hardware, and which are best solved
 in software? Your task is to use everything you have learnt to make the best
 chatbot you can.
 
-## 3.8 Putting it all together in the real world
+## 3.8 (Optional) Putting it all together in the real world
 
-Congrats, you've made it to the last part of the labs. Now it's time to make it
+Congrats, you've made it to the last part of the lab. Now it's time to make it
 look good in real life, by designing and 3D printing a case for the chatbot
 hardware!
 
